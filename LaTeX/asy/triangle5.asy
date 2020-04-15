@@ -31,9 +31,9 @@ xaxis("$x$",-4,7.2,fontsize(6),Arrow);
 yaxis("$y$",-1.5,2.5,fontsize(6),Arrow);
 label("$y=\sin(x),x\in [0,2\pi]$",(3,1.3),fontsize(4));
 draw(graph(sin,0,2pi,operator ..));
-for(int i=1;i<13;++i){
-  label(piformat(i,6),(i*pi/6,i<=6?-0.25:0.25),fontsize(4));
-  dot((i*pi/6,0),linewidth(1.5));
+for(int i=1;i<5;++i){
+  label(piformat(i,2),(i*pi/2,i<=6?-0.25:0.25),fontsize(4));
+  dot((i*pi/2,0),linewidth(1.5));
 }
 draw(circle((-2,0),1));
 int j=0;
