@@ -1,5 +1,5 @@
 ---
-typora-root-url: svg/
+typora-root-url: ./svg/
 ---
 
 # asymptote syntax
