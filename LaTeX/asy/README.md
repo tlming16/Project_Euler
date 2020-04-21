@@ -47,4 +47,5 @@
 ![triangle4](svg/triangle4.svg)
 
 ![triangle5](svg/triangle5.svg)
+![wall](svg/wall.svg)
 

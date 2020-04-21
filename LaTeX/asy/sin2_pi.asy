@@ -11,7 +11,7 @@ real f(real x){
   }
 
   draw(graph(f,-1,pi+1,operator ..));
-  draw(graph(f,0,pi,operator ..),red);
+  draw(graph(f,pi/8,9pi/8,operator ..),red);
 
   for(int i=-4;i<12;++i){
     label(piformat(i,8),(i*pi/8,-0.2),fontsize(4));

@@ -1,0 +1,11 @@
+\documentclass{scrartcl}
+\usepackage[margin=15mm]{geometry}
+\usepackage{tikz}
+
+\begin{document}
+    \begin{tikzpicture}
+        \shade[top color=blue!40!white,opacity=0.75] (-1,0) arc (180:0:1cm and 0.5cm) -- (0,-3) -- cycle;
+        \draw [thick](-1,0) arc (180:360:1cm and 0.5cm) -- (0,-3) -- cycle;
+        \draw [thick](-1,0) arc (180:0:1cm and 0.5cm);
+    \end{tikzpicture}
+\end{document}
