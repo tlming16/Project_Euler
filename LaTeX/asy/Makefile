@@ -1,12 +1,12 @@
-all: *.asy 
-	asy -f pdf *.asy 
-	asy -f svg *.asy
+all: pdf svg copy
 	cp *.svg svg
 	cp *.pdf pdf
-	rm -f *.aux *.log *.pdf *.svg 
-
+pdf:*.asy
+	asy -f pdf *.asy 
+svg:*.asy
+	asy -f svg *.asy 
 .PONY:clean
-copy: *.pdf *.svg 
+copy: pdf svg 
 	cp *.pdf pdf 
 	cp *.svg svg 
 clean:
