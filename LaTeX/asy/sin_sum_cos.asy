@@ -20,7 +20,7 @@ label("$y=sin(x)+cos(x)$",(pi,2),fontsize(4));
 
 draw((-6,-sqrt(2))--(6,-sqrt(2)),dotted);
 draw((-6,sqrt(2))--(6,sqrt(2)),dotted);
-draw((-6,0.5)--(6,0.5),dotted);
+draw((-6,1)--(6,1),dotted);
 
 for(int i=-2;i<3;++i){
   string s="$"+string(i) +"$";

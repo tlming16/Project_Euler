@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\noindent 
+题目15
+\begin{equation*}
+\begin{split}
+f(x)&=2\cos{x} (\sin{x}\cos{\frac{\pi}{3}}+\cos{x}\sin{\frac{\pi}{3}}) -\sqrt{3} \frac{1-\cos{2x}}{2}+\frac{1}{2}\sin{2x} \\
+&=\sin{x}\cos{x}+\sqrt{3}\cos^2{x}-\sqrt{3}(\frac{1}{2}-\frac{1}{2}\cos{2x}) +\frac{1}{2}\sin{2x} \\
+&= \sin{2x}+\sqrt{3}\frac{\cos{2x}+1}{2} -\frac{\sqrt{3}}{2}+
+\frac{\sqrt{3}}{2}\cos{2x}\\
+&= \sin{2x} +\sqrt{3}\cos{2x} \\
+&= 2\sin{(2x+\frac{\pi}{3})}
+\end{split}
+\end{equation*}
+所以 函数周期为$\pi$，振幅为$2$,初相为$\frac{\pi}{3}$,
+单调递增区间 $$-\frac{\pi}{2}+2k\pi \le 2x+\frac{\pi}{3}\le \frac{\pi}{2}+2k\pi$$$$\Longrightarrow x\in (-\frac{5\pi}{12}+k\pi,\frac{\pi}{12}+k\pi),k\in Z$$
+
+题目17 \\
+(1) 最大温差:$30^{\circ}C -10^{\circ}C=20^{\circ}C$\\ 
+(2) 
+\begin{equation*}
+\begin{cases}
+\begin{split}
+A+b&=30 \\
+-A+b&=10 
+\end{split}
+\end{cases}
+\Longrightarrow 
+\begin{cases}
+\begin{split}
+A=10 \\
+b=20
+\end{split}
+\end{cases}
+\end{equation*}
+周期$$T=2\times(14-6)=16\Longrightarrow \omega=\frac{2\pi}{16}=\frac{\pi}{8}$$
+将$(16,30)$ 代入函数得$$10\sin{(\frac{\pi}{8}\times 16+\phi)}+20=30$$ $$\Longrightarrow \phi=-\frac{5\pi}{4}+2k\pi \Longrightarrow 
+\phi=\frac{3\pi}{4}$$
+
+题 18\\
+周期$$T=2\times(\frac{11\pi}{12}-\frac{5\pi}{12})=\pi \Longrightarrow \omega=\frac{2\pi}{T}=2$$ 
+$A=3$,将$$(\frac{5\pi}{12},3)$$代入$$y=3\sin{(2x+\phi)}$$有
+\[2\times \frac{5\pi}{12}+\phi=\frac{\pi}{2}+2k\pi \Longrightarrow \phi=-\frac{\pi}{3}+3k\pi,(k\in Z)\] 
+所以函数表达式为\[y=3\sin{(2x-\frac{\pi}{3})}\]
+
+题目19 
+(1) 
+\begin{equation*}
+\begin{split}
+f(x) &=\sqrt{3}\cos^2{\omega x}+\frac{1}{2}\sin{2\omega x} +a\\
+     &=\sqrt{3}\frac{\cos{2\omega x}+1}{2} +\frac{1}{2}\sin{2\omega x}+a \\
+     &= \frac{\sqrt{3}}{2}\cos{2\omega x}+\frac{1}{2}\sin{2\omega x} +\frac{\sqrt{3}}{2}+a \\
+     &=\sin{(2\omega x+\frac{\pi}{3})} +\frac{\sqrt{3}}{2}+a
+\end{split}
+\end{equation*}
+\[2\omega \times \frac{\pi}{6}+\frac{\pi}{3}=\frac{\pi}{2} \Longrightarrow \omega=\frac{1}{2}\]
+(2) \[f(x)=\sin{(x+\frac{\pi}{3})}+\frac{\sqrt{3}}{2}+a,x\in[-\frac{\pi}{3},\frac{5\pi}{6}] \Longrightarrow x+\frac{\pi}{3}\in[0,\frac{7\pi}{6}]\]
+最小值$$\sin{\frac{7\pi}{6}}+\frac{\sqrt{3}}{2}+a=-\frac{1}{2}+\frac{\sqrt{3}}{2}+a=\sqrt{3}$$
+所以 $$a=\frac{\sqrt{3}+1}{2}$$
+
+21 题
+(1) \[\sin{x}+\cos{x}=\sqrt{2}\sin{(x+\frac{\pi}{4})}\in[-\sqrt{2},\sqrt{2}] \Longrightarrow a\in[-\sqrt{2},\sqrt{2}]\text{\quad 有解}\]
+(2) 当$x\in [0,\pi]$时 
+\[ x+\frac{\pi}{4} \in [\frac{\pi}{4},\frac{5\pi}{4}] \text{\quad 有两解} \Longrightarrow x_1\in [0,\frac{\pi}{4}), 
+x_2\in (\frac{\pi}{4},\frac{\pi}{2}] \Longrightarrow a\in [1,\sqrt{2}) \text{,此时两根关于} x=\frac{\pi}{4} \text{对称}\]
+即两根之和为$\frac{\pi}{2}$
+
+\end{document}
