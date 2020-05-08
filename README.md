@@ -1,10 +1,12 @@
-# Project_Euler
+# PE and more
+## 1. about
+
 * cpp
 * julia 
 * go 
 * d
 * python 
+* LaTeX && asymptote 
 
-
-# AUTODIFF 
+# 2. AUTODIFF
 
