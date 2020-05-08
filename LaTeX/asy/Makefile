@@ -1,13 +1,13 @@
-all: pdf svg copy
+all: pdf_g svg_g
 	cp *.svg svg
 	cp *.pdf pdf
-pdf:*.asy
-	asy -f pdf *.asy 
-svg:*.asy
-	asy -f svg *.asy 
+pdf_g:*.asy
+	asy -f pdf $^ 
+svg_g:*.asy
+	asy -f svg $^
 .PONY:clean
-copy: pdf svg 
+copy: pdf_g svg_g 
 	cp *.pdf pdf 
 	cp *.svg svg 
 clean:
-	rm -f *.aux *.aux  *.log  *.pdf *.eps 
+	rm -f *.aux *.aux  *.log  *.pdf *.eps *.svg *.png 
