@@ -11,6 +11,8 @@
 ![cos2x](svg/cos2x.svg)
 ![cos3](svg/cos3.svg)
 ![cos_abs](svg/cos_abs.svg)
+![ellipse](svg/ellipse.svg)
+![ellipse_1](svg/ellipse_1.svg)
 ![fill_draw](svg/fill_draw.svg)
 ![intersect](svg/intersect.svg)
 ![intersect_lgcos](svg/intersect_lgcos.svg)
