@@ -27,13 +27,13 @@ string piformat(int m,int n){
   return res;
 }
 
-xaxis("$x$",-4pi-1,4pi+2,fontsize(6),Arrow);
-yaxis("$y$",-2,4,fontsize(6),Arrow);
+xaxis("$x$",-4pi-1,4pi+2,fontsize(4),Arrow);
+yaxis("$y$",-2,4,fontsize(4),Arrow);
 
 draw(graph(cos,-4pi,4pi,operator ..),fontsize(4));
 label("$y=\cos(x) \quad x \in R$",(0,1.5),fontsize(4));
-for(int i=-4;i<=4;++i){
-  dot((i*pi,0),linewidth(1));
-  label(piformat(i,2),(i*pi,i%2==0?0.25:-0.25),fontsize(4));
+for(int i=-8;i<=8;++i){
+  dot((i*pi/2,0),linewidth(1));
+  label(piformat(i,2),(i*pi/2,i%2==0?0.35:-0.5),fontsize(3));
 }
 

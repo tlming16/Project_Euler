@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{{fig/pdf/}}
+\newcommand \row[1]{$\displaystyle #1$}
+\begin{document}
+\noindent 
+(4) 若\row{\sin(x)=a,a\in\left(\frac{3\pi}{2},2\pi\right)},求$x$
+\begin{enumerate}
+\item[(1)]若 $|a|>1$,则 $x\in \emptyset$
+\item[(2)] 若 $|a|\le 1$,则
+\begin{enumerate}
+\item[i)] 若 $0\le a\le 1,x\in \emptyset$
+\item[ii)] 若 $a=-1,x\in \emptyset$
+\item[iii)] 若 $-1<a<0,x=2\pi+\arcsin{a}$
+\end{enumerate}
+\end{enumerate}
+
+\noindent 
+13)
+求\row{y=\frac{1}{2}\arccos{\frac{1}{\sqrt{4-x^2}}}} 的单调区间 \\
+\begin{center}
+\includegraphics{arccos_sqrt.pdf}
+\end{center}
+\begin{equation*}
+\text{定义域}
+\begin{cases}
+\begin{split}
+&4-x^2&>0 \\
+-1&\le \frac{1}{\sqrt{4-x^2}}&\le 1
+\end{split}
+\end{cases}
+\Longrightarrow  x\in [-\sqrt{3},\sqrt{3}]
+\end{equation*}
+单调增区间为 $\displaystyle [-\sqrt{3},0]$,单调减区间为\row{[0,\sqrt{3}]}\\
+\noindent
+16) 求满足 $\arccos{2x}<\arccos{(1-x)}$的实数$x$的取值范围 \\
+\begin{equation*}
+\begin{cases}
+\begin{split}
+-1&\le 2x \le  1 \\
+-1&\le 1-x\le 1 \\
+2x &>1-x 
+\end{split}
+\end{cases}
+\Longrightarrow
+\begin{cases}
+\begin{split}
+-\frac{1}{2}& \le x \le\frac{1}{2} \\
+0& \le x \le 2 \\
+x& > \frac{1}{3}
+\end{split}
+\end{cases}
+\Longrightarrow  \frac{1}{3}< x \le \frac{1}{2}
+\end{equation*}
+\noindent
+17 求下列函数的反函数\\
+1) \row{y=3\sin{\frac{x}{2}},x\in[-\pi,\pi]} \\ 
+$\because$ \row{x\in[-\pi,\pi],\frac{x}{2}\in [-\frac{\pi}{2},\frac{\pi}{2}]},\\
+$\Longrightarrow$ $\displaystyle \frac{x}{2}=\arcsin{\frac{y}{3}}$,解得
+\row{x=2\arcsin{\frac{y}{3}}} \\
+$\therefore$反函数为 \row{y=2\arcsin{\frac{x}{3}},x\in[-3,3]} \\
+
+\noindent 
+2) \row{y=\sin{x},x\in [\frac{3\pi}{2},\frac{5\pi}{2}]} \\
+$\because$ \row{x\in [\frac{3\pi}{2},\frac{5\pi}{2}] \Longrightarrow y=\sin{x}\in[-1,1], x-2\pi\in [-\frac{\pi}{2},\frac{\pi}{2}]}\\
+\row{\sin{(x-2\pi)}=\sin{x}=y\Longrightarrow x-2\pi=\arcsin{y}} \\
+$\therefore$反函数为\row{y=2\pi +\arcsin{x},x\in [-1,1]}\\
+
+
+\noindent 
+3) \row{y=\frac{\pi}{2}+\arccos{\frac{x}{2}}} \\
+\row{\because y-\frac{\pi}{2}=\arccos{\frac{x}{2}},y\in [\frac{\pi}{2},\frac{3\pi}{2}]} \\
+\row {\Longrightarrow \cos{(y-\frac{\pi}{2})}=\frac{x}{2}} \\
+$\therefore$反函数为 \row{y=2\sin{x},x\in[\frac{\pi}{2},\frac{3\pi}{2}]} \\
+
+\noindent 
+4)  \row{y=3\pi -\arctan{(2x-1)}}\\
+$\because$ \row{3\pi-y= \arctan{(2x-1)}\Longrightarrow y\in [\frac{5\pi}{2},\frac{7\pi}{2}]}\\
+\row{ \because \tan{(3\pi-y)}=2x-1}
+\row{\Longrightarrow 2x=1-\tan{y}}\\
+$\therefore$反函数为 \row{y=\frac{1-\tan{x}}{2},x\in [\frac{5\pi}{2},\frac{7\pi}{2}]}\\
+
+\noindent 
+18 求函数 \row{y=(\arcsin{x})^2-2\arcsin{x}-2} 的最大值\\ 
+令 \row{t=\arcsin{x},t\in [-\frac{\pi}{2},\frac{\pi}{2}]}\\ 
+\row{\Longrightarrow y=t^2-2t-2 =(t-1)^2-3} \\
+最大值\row{\frac{\pi^2}{4}+\pi -2},在\row{t=-\frac{\pi}{2}}处取得
+
+
+\end{document}

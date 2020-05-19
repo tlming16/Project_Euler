@@ -34,6 +34,6 @@ draw(graph(sin,-4pi,4pi,operator ..),fontsize(4));
 label("$y=\sin(x) \quad x \in R$",(0,1.5),fontsize(4));
 for(int i=-8;i<=8;++i){
   dot((i*pi/2,0),linewidth(1));
-  label(piformat(i,2),(i*pi/2-0.1,i%2==0?0.55:-0.55),fontsize(4));
+  label(piformat(i,2),(i*pi/2-0.1,i%2==0?0.55:-0.55),fontsize(3));
 }
 
