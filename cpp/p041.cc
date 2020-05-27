@@ -1,60 +1,79 @@
-#include <algorithm>
-#include <vector>
-#include <iostream>
+/*
+see from https://projecteuler.net/problem=41
+
+We shall say that an n-digit number is pandigital 
+if it makes use of all the digits 1 to n exactly once.
+For example, 2143 is a 4-digit pandigital and is also prime.
+What is the largest n-digit pandigital prime that exists?
+*/
+
+# include <vector>
+# include <string>
+# include <algorithm> 
+# include <iostream> 
 using namespace std;
+class pandigital_prime{
+    public:
+    int n;// 
+    vector<int>  digit_v;
+    bool is_prime(int x) {
+        if (x<=1) return false ;
+        if(x==2||x==3||x==5) return true;
+        if(x%2==0 || x%3==0 ) return false;
+        for(int i=3;i*i<=x;i+=2){
+            if( x%i==0) return false;
+        }
+        return true;
+    }
+    bool is_right(vector<int> & res) {
+        bool flag=false;
+        do { 
+            int num =get_num();
+            if(is_prime(num)) {
+                res.push_back(num);
+                flag=true;
 
+            }
+        } while(next_permutation(digit_v.begin(),digit_v.end()));
+        return flag;
 
-bool is_prime(int n);
+    }
 
-int vec_num(const vector<int> & v);
+    int get_num() {
+        int n=0;
+        for(auto x:digit_v){
+            n=n*10+x;
+        }
+        return n;
+    } 
+    void reset(int n){
+        this->n=n;
+        digit_v.clear();
+        for(int i=1;i<=n;i++){
+            digit_v.push_back(i);
+        }
 
-bool has_prime(const vector<int> &a,int n,int * );
+    }
 
+};
 int main(){
+    pandigital_prime pm;
+    vector<vector<int>> res;
+    for( int i=9;i>1;i--) { 
+        vector<int> ans;
+        pm.reset(i);
+        if (pm.is_right(ans)){
+            res.push_back(ans);
 
-	const vector<int> a={1,2,3,4,5,6,7,8,9};
-	int n=9;
-	int r;
-	while(!has_prime(a,n,&r)){
-		n--;
-	}
+        }
+    } 
+    int ans=-1;
+    for(auto x:res){
+        for( auto v:x){
+            ans=max(ans,v);
+        }
 
-	cout<<r<<endl;
+    }
+    cout<<ans<<endl;
 
-
-}
-
-bool is_prime(int n){
-	if(n<2) return false;
-	if(n==2) return true;
-	if(n%2==0)  return false;
-	for(int i=3;i*i<n;i+=2){
-		if(n%i==0)  return false;
-	}
-
-	return true;
-}
-
-int vec_num(const std::vector<int> & v){
-
-	int next=0;
-	for(int i=0;i<v.size();i++){
-		next=next*10+v[i];
-	}
-
-	return next;
-}
-
-bool has_prime(const std::vector<int> &v,int n,int *result){
-	std::vector<int> vv(v.begin(),v.begin()+n);
-     int  a=-987654321;
-	while(next_permutation(vv.begin(),vv.end())){
-		int b=vec_num(vv);
-		if(is_prime(b))  {   if(a<b) a=b; 
-		}
-	}
-
-	if(a>-987654321) { *result=a;  return true;}
-
-	return false;
 }
