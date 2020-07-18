@@ -1,0 +1,20 @@
+/* dot -Tpng compiler.dot -o compiler.png 
+* tlming16 
+* all wrongs reserved 
+*/
+digraph compile {
+  edge [fontname="FangSong"];
+  node [shape=box, fontname="FangSong" size="20,20"];
+  a[label="源文件"];
+  b[label="预处理"];
+  c[label="汇编"];
+  d[label="目标文件"];
+  e[label="链接"];
+  f[label="可执行程序"];
+  a->b;
+  b->c;
+  c->d;
+  d->e;
+  e->f;
+  
+}
