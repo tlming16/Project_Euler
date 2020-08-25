@@ -1,0 +1,20 @@
+/* dot -Tpng call_stack.dot -o call_stack.png 
+* tlming16 
+* all wrongs reserved 
+*/
+digraph compile {
+  edge [fontname="FangSong"];
+  node [shape=box, fontname="FangSong" size="20,20"];
+  a[label="函数参数,\n rdi,rsi,rdx,rcx,r8,r9 \n 参数个数多余6个 \n 顺序\n nth\n ...\n 8th\n 7th"];
+  b[label="函数返回地址\n "];
+  c[label="上一帧栈%rbp地址\n push %rbp \n movq %rsp,%rbp"]; 
+  d[label="局部变量地址\n 起始地址为-n(%rbp) n为第一个变量的size\n 注意内存对齐"];
+  e[label="---"];
+  f[label="%esp 地址"];
+  a->b;
+  b->c;
+  c->d;
+  d->e;
+  e->f;
+  
+}
