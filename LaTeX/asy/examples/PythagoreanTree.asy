@@ -1,4 +1,4 @@
-size(250);
+size(750);
 
 real a=3;
 real b=4;
