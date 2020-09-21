@@ -26,6 +26,14 @@ struct example {
     other._handle=nullptr;
     return *this;
   }
+  ~example() {
+    cout<<"# destroy ~example()\n";
+    
+    if (_handle){
+      _handle.destroy();
+    }
+
+  }
 
   T get() {
     cout<<" get return value\n"; 
@@ -38,6 +46,9 @@ struct example {
   struct promise_type{
     promise_type() {
       cout<<"@  promise_type created\n";
+    }
+    ~promise_type(){
+      cout<<"@ promise_type destroy()\n";
     }
     example<T> get_return_object(){
       cout<<"@ get_return_object called\n"; 
@@ -77,6 +88,7 @@ struct example {
 
 example<int> example_1(){
   std::cout<<"------start coroutine------ \n";
+  //co_return 100;
   co_yield 1;
   co_yield 2;
   for (int i=3;i<10;i++){
@@ -88,8 +100,9 @@ example<int> example_1(){
 
 int main(){
 
-  auto a =example_1();
   cout<<" create a coroutine ,try to get value\n";
+  auto a =example_1();
+  
   cout<<"value is "<<a.get()<<"\n";
   cout<<a.get()<<endl;
 
