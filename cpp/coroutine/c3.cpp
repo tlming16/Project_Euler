@@ -39,7 +39,7 @@ struct example {
       value=v;
       return std::suspend_always{};
     }
-    auto final_suspend()->std::suspend_always{
+    auto final_suspend() noexcept ->std::suspend_always{
       return std::suspend_always{};
     }
     void unhandled_exception(){
@@ -67,7 +67,7 @@ struct awaitble_obj {
 
 example<int> await_routine(){
   awaitble_obj a = awaitble_obj();
-  for (int i=1;i<5;i++){
+  for (int i=1;i<100;i++){
     auto v = co_await a;
     co_yield v;
   }

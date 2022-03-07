@@ -71,7 +71,7 @@ struct example {
       value =v;
       return std::suspend_never{};
     }
-    std::suspend_always final_suspend(){
+    std::suspend_always final_suspend() noexcept{
       cout<<"@ finale_suspend is called\n";
       return std::suspend_always{};
     }
