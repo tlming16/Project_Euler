@@ -1,0 +1,8 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{animations}
+
+\begin{document}
+
+\tikz \node [fill, text = white, animate = {myself:fill = {0s = "red", 2s = "blue", begin on = click }}] {Click me};
+\end{document}

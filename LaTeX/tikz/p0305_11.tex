@@ -1,0 +1,28 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{animate}
+\usepackage{amsmath}
+\usepackage{ifthen}
+\usetikzlibrary {matrix}
+\usepackage{tikzlings}
+\usepackage{tikzlings-penguins}
+
+\begin{document}
+\begin{tikzpicture}[>=latex]
+  \begin{scope}
+    \draw[->] (-pi/2,0) --(pi/2+0.2,0) node[below] {$x$};
+    \draw[->] (0,-2.3) --(0,2.5) node[left]  {$y$};
+    \draw[domain=-pi/3:pi/2,smooth,samples=200,thick] plot[id=log2] function { 2*sin(2*x-pi/6)} ;
+    \node[below left]  (o) at (0,0) {$o$};
+    \node[below ] (x1) at (pi/3,0) {$\frac{\pi}{3}$};
+    \node[below left] (x2) at (-pi/6,0) {$-\frac{\pi}{6}$};
+    \node[below left] (y2) at (0,-2) {$-2$};
+    \node[left] (y1) at (0,2) {$2$};
+    \draw[dashed] (-pi/6,0)--(-pi/6,-2)--(0,-2);
+    \draw[dashed] (pi/3,0)--(pi/3,2)--(0,2);
+  \end{scope}
+
+\end{tikzpicture}
+
+
+\end{document}

@@ -1,0 +1,82 @@
+
+\documentclass[parskip]{scrartcl}
+\usepackage[margin=15mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows}
+
+\newdimen\XCoord
+\newdimen\YCoord
+
+\newcommand*{\ExtractCoordinate}[1]{\path (#1); \pgfgetlastxy{\XCoord}{\YCoord};}%
+
+\begin{document}
+
+% ============================= modify these for altered appearence
+\pgfmathsetmacro{\mintime}{0}
+\pgfmathsetmacro{\maxtime}{15}
+\newcommand{\timeunit}{Months}
+\pgfmathtruncatemacro{\timeintervals}{15}
+\pgfmathsetmacro{\scaleitemseparation}{4}
+\pgfmathsetmacro{\timenodewidth}{2cm}
+\newcounter{itemnumber}
+\setcounter{itemnumber}{0}
+\newcommand{\lastnode}{n-0}
+% ============================= 
+
+\newcommand{\timeentry}[2]{% time, description
+\stepcounter{itemnumber}
+\node[below right,minimum width=\timenodewidth, text width=\timenodewidth-1mm] (n-\theitemnumber) at (\lastnode.south west) {#1};
+\node[right] at (n-\theitemnumber.east) {#2};
+
+\edef\lastnode{n-\theitemnumber}
+
+\expandafter\edef\csname nodetime\theitemnumber \endcsname{#1}
+}
+
+\newcommand{\drawtimeline}{%
+    \draw[very thick,-latex] (0,0) -- ($(\lastnode.south west)-(\scaleitemseparation,0)+(0,-1)$);
+    \ExtractCoordinate{n-\theitemnumber.south}
+    \pgfmathsetmacro{\yposition}{\YCoord/28.452755}
+    \foreach \x in {1,...,\theitemnumber}
+    {   \pgfmathsetmacro{\timeposition}{\yposition/(\maxtime-\mintime)*\csname nodetime\x \endcsname}
+        %\node[right] at (0,\timeposition) {\yposition};
+        \draw (0,\timeposition) -- (0.5,\timeposition) -- ($(n-\x.west)-(0.5,0)$) -- (n-\x.west);
+    }
+    \foreach \x in {0,...,\timeintervals}
+    {   \pgfmathsetmacro{\labelposition}{\yposition/(\maxtime-\mintime)*\x}
+        \node[left] (label-\x) at (-0.2,\labelposition) {\x\ \timeunit};
+        \draw (label-\x.east) -- ++ (0.2,0);
+    }   
+}
+
+\begin{tikzpicture}
+\node[inner sep=0] (n-0) at (\scaleitemseparation,0) {};
+\timeentry{1}{The first entry.}
+\timeentry{1.2}{The second entry.}
+\timeentry{1.23456}{The third entry.}
+\timeentry{3}{Entry number \theitemnumber}
+\timeentry{5}{Entry number \theitemnumber}
+\timeentry{5.1}{Entry number \theitemnumber}
+\timeentry{5.2}{Entry number \theitemnumber}
+\timeentry{5.3}{Entry number \theitemnumber}
+\timeentry{5.4}{Entry number \theitemnumber}
+\timeentry{5.5}{Entry number \theitemnumber}
+\timeentry{5.6}{Entry number \theitemnumber}
+\timeentry{6}{Entry number \theitemnumber}
+\timeentry{7}{Entry number \theitemnumber}
+\timeentry{8}{Entry number \theitemnumber}
+\timeentry{9}{Entry number \theitemnumber}
+\timeentry{10}{Entry number \theitemnumber}
+\timeentry{11}{Entry number \theitemnumber}
+\timeentry{11.1}{Entry number \theitemnumber}
+\timeentry{11.2}{Entry number \theitemnumber}
+\timeentry{11.3}{Entry number \theitemnumber}
+\timeentry{11.5}{Entry number \theitemnumber}
+\timeentry{11.7}{Entry number \theitemnumber}
+\timeentry{11.9}{Entry number \theitemnumber}
+\timeentry{13}{Entry number \theitemnumber}
+\timeentry{15}{Entry number \theitemnumber}
+\drawtimeline
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{article}
+% main document, called main.tex
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/]
+\tikzexternalize % activate!
+\begin{document}
+\begin{tikzpicture}
+\node {root}
+child {node {left}}
+child {node {right}
+child {node {child}}
+child {node {child}}
+};
+\end{tikzpicture}
+A simple image is \tikz \fill (0,0) circle(5pt);.
+\end{document}
