@@ -25,11 +25,11 @@ std::vector<bool> prime_table(int64 n){
 	res[0]=res[1]=false;
 
 	for(int64 i=2;i<n+1;i++){
-		for( int64 j=i*i;j<n+1;j+=i){
 			if (res[i]){
-				res[j]=false;
-			}
-		}
+              for( int64 j=i*i;j<n+1;j+=i){
+                res[j]=false;
+              }
+            }
 	}
 	return res;
 
